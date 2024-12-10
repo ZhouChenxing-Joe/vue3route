@@ -1,9 +1,9 @@
 <template>
   <div class=" app">
-    <h2>Vue路由测试</h2>
+    <h2 class="title">Vue路由测试</h2>
     <!-- 导航区 -->
      <div class="navigate">
-      <a href="#">首页</a>
+      <a href="#" class="active">首页</a>
       <a href="#">新闻</a>
       <a href="#">关于</a>
      </div>
