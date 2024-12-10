@@ -26,4 +26,5 @@ const router = createRouter({
     ]
 })
 
+//暴露出去router
 export default router

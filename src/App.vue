@@ -3,13 +3,14 @@
     <h2 class="title">Vue路由测试</h2>
     <!-- 导航区 -->
      <div class="navigate">
-      <a href="#" class="active">首页</a>
-      <a href="#">新闻</a>
-      <a href="#">关于</a>
+      <RouterLink to="/home" active-class="active">首页</RouterLink>
+      <RouterLink to="/news" active-class="active">新闻</RouterLink>
+      <RouterLink to="/about" active-class="active">关于</RouterLink>
      </div>
      <!-- 展示区 -->
       <div class="main-content">
-         此处以后可能展示各种组件到底展示那个需要看路径
+         <!-- 此处以后可能展示各种组件到底展示那个需要看路径 -->
+        <RouterView></RouterView>
       </div>
   </div>
 </template>
@@ -19,6 +20,7 @@
  <!-- 需要在Terminal里面安装这个npm i vite-plugin-vue-setup-extend -->
   <!-- 然后再vite.config.ts里import npm i vite-plugin-vue-setup-extend -->
 <script lang="ts" setup name="App">
+import {RouterView,RouterLink} from 'vue-router'
 </script>
 
 <style>
