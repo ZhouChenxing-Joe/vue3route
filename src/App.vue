@@ -1,7 +1,9 @@
 <template>
   <div class=" app">
-    <h2 class="title">Vue路由测试</h2>
-    <!-- 导航区 -->
+    <!-- 一般组件  Header.vue-->
+    <Header/>
+     <!-- 导航区 -->
+    <!-- <h2 class="title">Vue路由测试</h2> -->
      <div class="navigate">
       <RouterLink to="/home" active-class="active">首页</RouterLink>
       <RouterLink to="/news" active-class="active">新闻</RouterLink>
@@ -21,6 +23,7 @@
   <!-- 然后再vite.config.ts里import npm i vite-plugin-vue-setup-extend -->
 <script lang="ts" setup name="App">
 import {RouterView,RouterLink} from 'vue-router'
+import Header from './components/Header.vue';
 </script>
 
 <style>
@@ -80,4 +83,7 @@ routes:[
 
 2.一般组件：亲手写标签出来的如：Demo.vue => <Demo/>
 
+两个注意点：
+1.路由组件通常放在pages或views文件夹，一般组件通常放在components文件夹
+2.通过点击导航，视觉效果上‘消失’了的路由组件，默认是被销毁的，需要的时候再去挂载
 -->
