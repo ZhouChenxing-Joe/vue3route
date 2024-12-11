@@ -71,3 +71,13 @@ import {RouterView,RouterLink} from 'vue-router'
 }
 
 </style>
+
+<!--怎样区分路由组件和一般组件（components）？
+1.路由组件：靠路由的规则渲染出来的
+routes:[
+  {path:'/demo',component:Demo}
+]
+
+2.一般组件：亲手写标签出来的如：Demo.vue => <Demo/>
+
+-->

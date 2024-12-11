@@ -3,7 +3,7 @@
 //第一步：引入createRouter
 import {createRouter,createWebHashHistory} from 'vue-router'
 //引入一个一个可能要呈现的组件
-import Home from '@/components/home.vue'
+import Home from '@/components/Home.vue'
 import News from '@/components/News.vue'
 import About from '@/components/About.vue'
 
