@@ -87,3 +87,27 @@ routes:[
 1.路由组件通常放在pages或views文件夹，一般组件通常放在components文件夹
 2.通过点击导航，视觉效果上‘消失’了的路由组件，默认是被销毁的，需要的时候再去挂载
 -->
+
+<!-- 接下来学习路由器的工作模式 
+1.history模式
+写法：
+vue2：mode:'history'
+vue3: history:createWebHistory()
+react: BrowserRouter
+
+优点：URL更加美观不带有#，更接近传统的网站URL
+缺点：后期项目上线，需要服务器端配合处理路径问题，否则刷新会有404错误
+const router = createRouter({
+        history:createWebHistory() //history模式
+        /******/
+})
+
+2.hash模式 
+优点：兼容性更好，因为不需要服务器处理路径
+缺点：URL带有#不太美观，且在SEO优化方面相对较差
+
+const router = createRouter({
+      history:createWebHashHistory()
+})
+
+-->
