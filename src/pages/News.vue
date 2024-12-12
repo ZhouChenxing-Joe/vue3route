@@ -1,15 +1,26 @@
 <template>
     <div class="news">
+        <!-- 导航区 -->
         <ul>
-            <li><a href="#">新闻001</a></li>
-            <li><a href="#">新闻002</a></li>
-            <li><a href="#">新闻003</a></li>
-            <li><a href="#">新闻004</a></li>
+            <li v-for="news in newsList" :key="news.id"><RouterLink :to="{path:'/news/detail'}">{{ news.title }}</RouterLink></li>
         </ul>
+        <!-- 展示区 -->
+         <div class="news-content">
+            <RouterView></RouterView>
+         </div>
     </div>
 </template>
 
 <script setup lang="ts" name="News">
+import { reactive } from 'vue';
+import { RouterView,RouterLink } from 'vue-router';
+
+const newsList = reactive([
+    { id: 'news01', title: 'God is true', content: 'Seek Him' },
+    { id: 'news02', title: 'God loves you', content: 'Gods Love' },
+    { id: 'news03', title: 'Jesus Walks with us', content: 'Jesus is Coming' },
+    { id: 'news04', title: 'Heaven no sorrow', content: 'We will be in Heaven' },
+])
 </script>
 
 <style scoped>
