@@ -22,10 +22,13 @@ const router = createRouter({
       name: "xinwen",
       path: "/news",
       component: News,
-      children:[{
-            path:'detail',
-            component:Detail
-      }]
+      children: [
+        {
+          name: "xiangxi",
+          path: "detail",
+          component: Detail,
+        },
+      ],
     },
     {
       name: "guanyu",

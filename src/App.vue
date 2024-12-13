@@ -149,5 +149,5 @@ const router = createRouter({
 <!-- 嵌套路由的学习
 代码请看News.vue和Detail.vue文件
 
-传参（传参数）的学习
+路由的传参（传参数）的学习
 -->

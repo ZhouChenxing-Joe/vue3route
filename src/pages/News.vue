@@ -2,18 +2,33 @@
     <div class="news">
         <!-- 导航区 -->
         <ul>
-            <li v-for="news in newsList" :key="news.id"><RouterLink :to="{path:'/news/detail'}">{{ news.title }}</RouterLink></li>
+            <li v-for="news in newsList" :key="news.id">
+                <!-- 第一种写法 -->
+                <!-- <RouterLink :to="`/news/detail?id=${news.id}&title=${news.title}&content=${news.content}`">{{ news.title }}</RouterLink> -->
+
+                <!-- 第二种写法 -->
+                <RouterLink :to="{
+                    name: 'xiangxi',
+                    query: {
+                        id: news.id,
+                        title: news.title,
+                        content: news.content,
+                    }
+                }">
+                    {{ news.title }}
+                </RouterLink>
+            </li>
         </ul>
         <!-- 展示区 -->
-         <div class="news-content">
+        <div class="news-content">
             <RouterView></RouterView>
-         </div>
+        </div>
     </div>
 </template>
 
 <script setup lang="ts" name="News">
 import { reactive } from 'vue';
-import { RouterView,RouterLink } from 'vue-router';
+import { RouterView, RouterLink } from 'vue-router';
 
 const newsList = reactive([
     { id: 'news01', title: 'God is true', content: 'Seek Him' },
@@ -35,8 +50,12 @@ const newsList = reactive([
 
 .news ul {
     margin-top: 30px;
-    list-style: none;
+    /* list-style: none; */
     padding-left: 10px;
+}
+
+.news li::marker {
+    color: #64967E;
 }
 
 .news li>a {
