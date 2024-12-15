@@ -150,4 +150,12 @@ const router = createRouter({
 代码请看News.vue和Detail.vue文件
 
 路由的传参（传参数）的学习
+
+query 参数的学习看文件夹Detail.vue和News.vue
+
+params 参数的学习看文件夹Detail.vue和News.vue
+-->
+
+<!-- 路由的props学习 
+文件夹 News.vue Detail.vue index.ts中 
 -->
