@@ -159,3 +159,9 @@ params 参数的学习看文件夹Detail.vue和News.vue
 <!-- 路由的props学习 
 文件夹 News.vue Detail.vue index.ts中 
 -->
+
+<!-- 接下来是replace属性的学习 在RouterLink 加入r
+<RouterLink replace to="/home" active-class="active">首页</RouterLink>
+<RouterLink replace :to="{name:'xinwen'}" active-class="active">新闻</RouterLink>
+<RouterLink replace :to="{ path: '/about' }" active-class="active">关于</RouterLink>
+-->
