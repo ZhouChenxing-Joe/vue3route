@@ -1,14 +1,17 @@
 <template>
     <ul class="news-list">
+       <!-- query参数  
         <li>编号:{{ route.query.id }}</li>
         <li>标题:{{ route.query.title }}</li>
-        <li>内容:{{ route.query.content }}</li>
+        <li>内容:{{ route.query.content }}</li> -->
     </ul>
 </template>
 
 <script setup lang="ts" name="Detail">
+
+/*query 参数 
 import { useRoute} from 'vue-router';
-const route = useRoute()
+const route = useRoute() */
 </script>
 
 <style scoped>

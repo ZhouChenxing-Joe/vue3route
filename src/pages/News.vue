@@ -3,10 +3,11 @@
         <!-- 导航区 -->
         <ul>
             <li v-for="news in newsList" :key="news.id">
-                <!-- 第一种写法 -->
+                <!-- 第一种写法 query 参数-->
                 <!-- <RouterLink :to="`/news/detail?id=${news.id}&title=${news.title}&content=${news.content}`">{{ news.title }}</RouterLink> -->
 
                 <!-- 第二种写法 -->
+               <!--query参数  
                 <RouterLink :to="{
                     name: 'xiangxi',
                     query: {
@@ -16,7 +17,9 @@
                     }
                 }">
                     {{ news.title }}
-                </RouterLink>
+                </RouterLink> -->
+
+                <RouterLink to="/news/detail">{{ news.title }}</RouterLink>
             </li>
         </ul>
         <!-- 展示区 -->
