@@ -3,12 +3,13 @@
         <!-- 导航区 -->
         <ul>
             <li v-for="news in newsList" :key="news.id">
+                <button @click="showNewsDetail(news)">查看新闻</button>
                 <!-- 第一种写法 query 参数的学习-->
-                <!-- <RouterLink :to="`/news/detail?id=${news.id}&title=${news.title}&content=${news.content}`">{{ news.title }}</RouterLink> -->
+                <RouterLink :to="`/news/detail?id=${news.id}&title=${news.title}&content=${news.content}`">{{ news.title }}</RouterLink>
 
                 <!-- 第二种写法 -->
-               <!--query参数  的学习
-                <RouterLink :to="{
+               <!--query参数  的学习-->
+                <!-- <RouterLink :to="{
                     name: 'xiangxi',
                     query: {
                         id: news.id,
@@ -20,7 +21,7 @@
                 </RouterLink> -->
                 
                 <!-- params 参数的学习 第一种写法-->
-                <RouterLink :to="`/news/detail/${news.id}/${news.title}/${news.content}`">{{ news.title }}</RouterLink>
+                <!-- <RouterLink :to="`/news/detail/${news.id}/${news.title}/${news.content}`">{{ news.title }}</RouterLink> -->
                 
                 <!-- params 参数的学习 第二种写法 -->
                 <!-- <RouterLink 
@@ -45,7 +46,7 @@
 
 <script setup lang="ts" name="News">
 import { reactive } from 'vue';
-import { RouterView, RouterLink } from 'vue-router';
+import { RouterView, RouterLink, useRouter } from 'vue-router';
 
 const newsList = reactive([
     { id: 'news01', title: 'God is true', content: 'Seek Him' },
@@ -53,6 +54,25 @@ const newsList = reactive([
     { id: 'news03', title: 'Jesus Walks with us', content: 'Jesus is Coming' },
     { id: 'news04', title: 'Heaven no sorrow', content: 'We will be in Heaven' },
 ])
+
+const router = useRouter()
+
+interface NewsInter{
+    id:string,
+    title:string,
+    content:string
+}
+
+function showNewsDetail(news:NewsInter){
+    router.push({
+        name:'xiang',
+        query:{
+            id:news.id,
+            title:news.title,
+            content:news.content
+        }
+    })
+}
 </script>
 
 <style scoped>

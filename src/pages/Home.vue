@@ -5,6 +5,17 @@
 </template>
 
 <script lang="ts" setup name="Home">
+import { onMounted } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter()
+
+onMounted(()=>{
+    setTimeout(()=>{
+        //在此处编写一段代码让路由实现跳转，这里就要用到编程式路由
+        router.push('/news')
+    },3000)
+})
 </script>
 
 <style scoped>

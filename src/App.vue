@@ -165,3 +165,7 @@ params 参数的学习看文件夹Detail.vue和News.vue
 <RouterLink replace :to="{name:'xinwen'}" active-class="active">新闻</RouterLink>
 <RouterLink replace :to="{ path: '/about' }" active-class="active">关于</RouterLink>
 -->
+
+<!-- 编程式导航的学习
+ 
+-->
