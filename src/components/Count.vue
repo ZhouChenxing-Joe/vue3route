@@ -12,6 +12,10 @@
 </template>
 
 <script setup lang="ts" name="Count">
+/* defineOptions({
+    name:'Count'
+}) */
+
 import { ref} from 'vue';
 
 //数据
