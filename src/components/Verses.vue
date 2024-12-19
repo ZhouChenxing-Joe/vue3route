@@ -14,8 +14,8 @@
 
 import { reactive } from 'vue'
 import axios from 'axios';
-import {nanoid} from 'nanoid'
- 
+import { nanoid } from 'nanoid'
+
 //数据
 let verses = reactive(
     [
@@ -31,16 +31,20 @@ let verses = reactive(
 npm i axios
  */
 async function getOneVerse() {
-  try{
-    //发请求
-    let {data:{content:title}} = await axios.get('https://bible-api.com/john+3:16')
-    //把请求回来的字符串包装成一个对象。
-    let obj = {id:nanoid(),title}
-    verses.shift() 
+    try {
+        //发请求,下面这行的写法是：连续解构赋值+重命名
+        let { data: { text: title } } = await axios.get('https://bible-api.com/john+3:16')
+        //这里的提供的api link 不能直接取出content，所以要从text分离出来，要想下面这样写
+        // let title = data.text.trim()
 
-}catch(error){
-    console.error('Error getting verses',error)
-}
+        //把请求回来的字符串包装成一个对象。
+        let obj = { id: nanoid(), title }
+        //放到数组中
+        verses.unshift(obj)
+
+    } catch (error) {
+        console.error('Error getting verses', error)
+    }
 }
 
 </script>
