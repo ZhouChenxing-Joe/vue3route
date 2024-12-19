@@ -13,8 +13,9 @@
 }); */
 
 import { reactive } from 'vue'
-import axios from "axios"
-
+import axios from 'axios';
+import {nanoid} from 'nanoid'
+ 
 //数据
 let verses = reactive(
     [
@@ -30,13 +31,18 @@ let verses = reactive(
 npm i axios
  */
 async function getOneVerse() {
-  try{  
-    let result = await axios.get('https://bible-api.com/john+3:16')
-    console.log(result.data)
-}catch (error) {
-    console.error("Error fetching the verse:", error)
+  try{
+    //发请求
+    let {data:{content:title}} = await axios.get('https://bible-api.com/john+3:16')
+    //把请求回来的字符串包装成一个对象。
+    let obj = {id:nanoid(),title}
+    verses.shift() 
+
+}catch(error){
+    console.error('Error getting verses',error)
 }
 }
+
 </script>
 
 <style scoped>
