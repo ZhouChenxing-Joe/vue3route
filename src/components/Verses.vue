@@ -38,7 +38,7 @@ async function getOneVerse() {
         // let title = data.text.trim()
 
         //把请求回来的字符串包装成一个对象。
-        let obj = { id: nanoid(), title }
+        let obj = { id: nanoid(), title } 
         //放到数组中
         verses.unshift(obj)
 
@@ -57,3 +57,5 @@ async function getOneVerse() {
     box-shadow: 0 0 10px;
 }
 </style>
+
+<!-- thank god, now i wanna code -->
