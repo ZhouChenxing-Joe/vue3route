@@ -45,7 +45,15 @@ let n = ref(1) //n是用户选择的数字
 
 //方法
 function plus(){
-    
+    //pinia 里的第一种修改数据的方式
+    // countStore.sum += 1
+
+    //第二种pinia修改数据方式
+    // countStore.$patch({
+    //     sum:22
+    // })
+
+    // 第三种
 }
 function minus(){
     
