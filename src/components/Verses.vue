@@ -2,7 +2,7 @@
     <div class="talk">
         <button @click="getOneVerse">Verse Of The Day</button>
         <ul>
-            <li v-for="v in verses" :key="v.id">{{ v.title }}</li>
+            <li v-for="v in versesStore.verses" :key="v.id">{{ v.title }}</li>
         </ul>
     </div>
 </template>
@@ -15,6 +15,11 @@
 import { reactive } from 'vue'
 import axios from 'axios';
 import { nanoid } from 'nanoid'
+import { useVersesStore } from '@/store/verses';
+
+const versesStore = useVersesStore
+
+// console.log(versesStore.verses)
 
 //数据
 let verses = reactive(
