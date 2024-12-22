@@ -6,9 +6,10 @@ export const useCountStore = defineStore('count', {
     //actions 里面放置的是一个一个的方法用于响应组件中的“动作”
     actions: {
         increment(value) {
-          console.log('increment被调用了',value)
-          //修改数据(this是当前的CountStore)
-          this.sum += value
+          if(this.sum < 10){
+            //修改数据(this是当前的CountStore)
+            this.sum += value
+          }
         },
       },
     //真正存储数据的地方
