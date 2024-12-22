@@ -1,6 +1,7 @@
 <template>
     <div class="count">
         <h2>当前求和为: {{ countStore.sum }}</h2>
+        <h3>地址:{{ countStore.address }},公司：{{ countStore.company }}</h3>
         <select v-model.number="n">
             <option value="1">1</option>
             <option value="2">2</option>
@@ -17,9 +18,9 @@
 }) */
 
 import { ref,reactive} from 'vue';
-import {useCountStore} from '@/store/count'
+import { useCountStore } from '@/store/count';
 
-const countStore = useCountStore
+const countStore = useCountStore()
 
 //以下两种方式都可以拿到state中的数据
 // console.log(countStore.sum)
@@ -40,20 +41,26 @@ console.log(x.value) */
 
 //数据
 
-let n = ref(1) //n是用户选择的数字
+//n是用户选择的数字
+let n = ref(1) 
 
 
 //方法
 function plus(){
     //pinia 里的第一种修改数据的方式
-    // countStore.sum += 1
+        // countStore.sum += 1
+        // countStore.address = '地址'
+        // countStore.company = '公司'
 
     //第二种pinia修改数据方式
     // countStore.$patch({
-    //     sum:22
+    //     sum:22,
+    //     address:'中国',
+    //     company:'科技'
     // })
 
     // 第三种
+    countStore.increment(n.value)
 }
 function minus(){
     

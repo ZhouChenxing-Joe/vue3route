@@ -15,11 +15,11 @@
 import { reactive } from 'vue'
 import axios from 'axios';
 import { nanoid } from 'nanoid'
-import { useVersesStore } from '@/store/verses';
+import { useVerseStore } from '@/store/verses';
 
-const versesStore = useVersesStore
+const versesStore = useVerseStore()
 
-// console.log(versesStore.verses)
+console.log('@@',versesStore.verses)
 
 //数据
 let verses = reactive(
