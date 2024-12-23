@@ -2,7 +2,7 @@
     <div class="talk">
         <button @click="getOneVerse">Verse Of The Day</button>
         <ul>
-            <li v-for="v in versesStore.verses" :key="v.id">{{ v.title }}</li>
+            <li v-for="v in verses" :key="v.id">{{ v.title }}</li>
         </ul>
     </div>
 </template>
@@ -16,19 +16,24 @@ import { reactive } from 'vue'
 import axios from 'axios';
 import { nanoid } from 'nanoid'
 import { useVerseStore } from '../store/verses';
+import { storeToRefs } from 'pinia';
 
 const versesStore = useVerseStore()
-
 console.log('@@',versesStore.verses)
 
+const {verses} = storeToRefs(versesStore) 
+console.log('##',storeToRefs(versesStore))
+
+
+
 //数据
-let verses = reactive(
+/* let verses = reactive(
     [
         { id: 'v1', title: '约翰福音 3:16 😊' },
         { id: 'v2', title: '诗篇 23:1 😊' },
         { id: 'v3', title: '腓立比书 4:13 😊' }
     ]
-)
+) */
 //方法
 
 /* getOneVerse 点击按钮就可以多生成一个verses 

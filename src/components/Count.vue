@@ -17,11 +17,14 @@
     name:'Count'
 }) */
 
-import { ref,reactive,toRefs} from 'vue';
+import { ref,reactive} from 'vue';
 import { useCountStore } from '../store/count';
+import { storeToRefs } from 'pinia';
 
 const countStore = useCountStore()
-const {sum,address,company} = toRefs(countStore)
+//storeToRefs只会关注store中的数据，不会对方法进行ref包裹
+const {sum,address,company} = storeToRefs(countStore)
+console.log('!!',storeToRefs(countStore))
 
 //以下两种方式都可以拿到state中的数据
 // console.log(countStore.sum)
