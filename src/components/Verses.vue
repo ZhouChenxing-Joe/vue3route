@@ -24,7 +24,10 @@ console.log('@@',versesStore.verses)
 const {verses} = storeToRefs(versesStore) 
 console.log('##',storeToRefs(versesStore))
 
-
+versesStore.$subscribe((mutate,state)=>{
+     console.log('versesStore里面保存的数据发生了变化',mutate,state)
+     localStorage.setItem('verses',JSON.stringify(state.verses))
+})
 
 //数据
 /* let verses = reactive(

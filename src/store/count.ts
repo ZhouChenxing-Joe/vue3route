@@ -29,7 +29,7 @@ export const useCountStore = defineStore("count", {
   },
   getters: {
     // 简写
-    bigSum:state => state.sum * 10,
+    bigSum:state => state.sum * 100,
 
     //正常写法
     /* bigSum(state) {

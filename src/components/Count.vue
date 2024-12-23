@@ -1,7 +1,7 @@
 <template>
     <div class="count">
         <h2>当前求和为: {{ sum }},当前值乘100:{{ bigSum }}</h2>
-        <h3>地址:{{ address }},公司：{{ company }}</h3>
+        <h3>地址:{{ address }},公司：{{ company }},地址英文大写:{{ upperAddress }}</h3>
         <select v-model.number="n">
             <option value="1">1</option>
             <option value="2">2</option>
@@ -23,7 +23,7 @@ import { storeToRefs } from 'pinia';
 
 const countStore = useCountStore()
 //storeToRefs只会关注store中的数据，不会对方法进行ref包裹
-const {sum,address,company,bigSum} = storeToRefs(countStore)
+const {sum,address,company,bigSum,upperAddress} = storeToRefs(countStore)
 console.log('!!',storeToRefs(countStore))
 
 //以下两种方式都可以拿到state中的数据

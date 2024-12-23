@@ -22,6 +22,7 @@ export const useVerseStore = defineStore('verses',{
                 { id: 'v2', title: '诗篇 23:1 😊' },
                 { id: 'v3', title: '腓立比书 4:13 😊' }
             ]
+            /* verses:JSON.parse(localStorage.getItem('verses') as string) || [] */
         }
     }
 }) 
