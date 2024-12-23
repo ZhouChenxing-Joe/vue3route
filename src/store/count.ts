@@ -28,8 +28,20 @@ export const useCountStore = defineStore("count", {
     };
   },
   getters: {
-    bigSum(state) {
+    // 简写
+    bigSum:state => state.sum * 10,
+
+    //正常写法
+    /* bigSum(state) {
       return state.sum * 100;
-    },
+    }, */
+
+    // 简写
+    upperAddress:state => state.address.toUpperCase(),
+   
+    //正常写法
+    /* upperAddress(state){
+      return state.address.toUpperCase() 
+    } */
   },
 });
