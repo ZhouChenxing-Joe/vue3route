@@ -1,7 +1,7 @@
 <template>
     <div class="count">
-        <h2>当前求和为: {{ countStore.sum }}</h2>
-        <h3>地址:{{ countStore.address }},公司：{{ countStore.company }}</h3>
+        <h2>当前求和为: {{ sum }}</h2>
+        <h3>地址:{{ address }},公司：{{ company }}</h3>
         <select v-model.number="n">
             <option value="1">1</option>
             <option value="2">2</option>
@@ -17,10 +17,11 @@
     name:'Count'
 }) */
 
-import { ref,reactive} from 'vue';
+import { ref,reactive,toRefs} from 'vue';
 import { useCountStore } from '../store/count';
 
 const countStore = useCountStore()
+const {sum,address,company} = toRefs(countStore)
 
 //以下两种方式都可以拿到state中的数据
 // console.log(countStore.sum)
