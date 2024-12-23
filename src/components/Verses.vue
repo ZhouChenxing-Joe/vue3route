@@ -35,8 +35,8 @@ let verses = reactive(
 在这里需要安装axios
 npm i axios
  */
-async function getOneVerse() {
-    try {
+function getOneVerse() {
+/*     try {
         //发请求,下面这行的写法是：连续解构赋值+重命名
         let { data: { text: title } } = await axios.get('https://bible-api.com/john+3:16')
         //这里的提供的api link 不能直接取出content，所以要从text分离出来，要想下面这样写
@@ -49,7 +49,9 @@ async function getOneVerse() {
 
     } catch (error) {
         console.error('Error getting verses', error)
-    }
+    } */
+
+    versesStore.getAVerse
 }
 
 </script>
