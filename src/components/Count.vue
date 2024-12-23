@@ -18,7 +18,7 @@
 }) */
 
 import { ref,reactive} from 'vue';
-import { useCountStore } from '@/store/count';
+import { useCountStore } from '../store/count';
 
 const countStore = useCountStore()
 

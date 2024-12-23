@@ -15,7 +15,7 @@
 import { reactive } from 'vue'
 import axios from 'axios';
 import { nanoid } from 'nanoid'
-import { useVerseStore } from '@/store/verses';
+import { useVerseStore } from '../store/verses';
 
 const versesStore = useVerseStore()
 
