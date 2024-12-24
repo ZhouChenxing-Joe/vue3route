@@ -25,4 +25,5 @@ export const useVerseStore = defineStore('verses',{
             /* verses:JSON.parse(localStorage.getItem('verses') as string) || [] */
         }
     }
-}) 
+})  
+/* version */
