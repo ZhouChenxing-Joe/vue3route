@@ -47,5 +47,10 @@ export const useVerseStore = defineStore('verses',()=>{
     //放到数组中
     verses.unshift(obj)
     }
+    //一定要记得return交出去
     return {verses,getAVerse}
 })
+
+/* 组件通信的学习：
+组件通信就是组件之间互相传递数据
+*/
