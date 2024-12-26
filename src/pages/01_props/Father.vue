@@ -2,7 +2,8 @@
   <div class="father">
     <h3>父组件</h3>
 	<h4>汽车:{{ car }}</h4>
-	<Child :car="car" />
+	<h5 v-show="toy">儿子给的玩具：{{ toy }}</h5>
+	<Child :car="car" :sendToy="getToy" />
   </div>
 </template>
 
@@ -11,10 +12,11 @@ import Child from './Child.vue';
 import { ref } from 'vue';
 //数据
 let car = ref('AMG CLA45S')
+let toy = ref('')
 
 //方法
-function getToy(Value:string){
-	console.log('父',Value)
+function getToy(value:string){
+	toy.value = value
 }
 </script>
 

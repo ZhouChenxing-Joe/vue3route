@@ -3,6 +3,7 @@
     <h3>子组件</h3>
 	<h4>玩具:{{ toy }}</h4>
 	<h4>父亲给的车:{{ car }}</h4>
+	<button @click="sendToy(toy)">把玩具给父亲</button>
   </div>
 </template>
 
@@ -11,7 +12,7 @@ import { ref } from 'vue';
 //数据
 let toy = ref('海绵宝宝')
 //声明接收props
-defineProps(['car'])
+defineProps(['car','sendToy'])
 </script>
 
 <style scoped>
