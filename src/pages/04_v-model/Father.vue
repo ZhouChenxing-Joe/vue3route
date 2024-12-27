@@ -8,10 +8,17 @@
      <!-- <input type="text" :value="username" @input="username = (<HTMLInputElement>$event.target).value"> -->
       
       <!-- v-model 用在组件标签上  -->
-      <!-- <JojoInput v-model="username"/> -->
-      <JojoInput 
+      <JojoInput v-model="username"/>
+       <!-- 底层写法 -->
+      <!-- <JojoInput 
       :modelValue="username" 
-      @update:modelValue ="username = $event"/>
+      @update:modelValue ="username = $event"/> -->
+
+      <!-- $event到底是啥？啥时候能.target
+      对于原生事件，$event就是事件对象 ===> 能.target
+      对于自定义事件，$event就是触发事件时。所传递的数据 ==> 不能.target 
+      -->
+
   </div>
 </template>
 
