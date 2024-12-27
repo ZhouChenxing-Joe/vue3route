@@ -5,15 +5,29 @@ import mitt from "mitt";
 const emitter = mitt()
 
 
-//绑定事件
+/* //绑定事件
 emitter.on('event1',()=>{
-    console.log('emitter被调用了')
+    console.log('event1被调用了')
 })
 
 //触发事件
 setTimeout(()=>{
     emitter.emit('event1')
 },2000)
+
+//每隔一秒触发一下事件
+setInterval(()=>{
+    emitter.emit('event1')
+},1000)
+
+//3秒后解绑event1
+setTimeout(()=>{
+    // emitter.off('event1')
+    // 全都解绑
+    emitter.all.clear()
+},3000)
+ */
+
 
 //暴露emitter
 export default emitter
