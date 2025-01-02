@@ -1,6 +1,7 @@
 <template>
   <div class="father">
     <h3>父组件</h3>
+    <h4>{{ username }}</h4>
     <!-- v-model 用在html标签上 -->
     <!-- <input type="text" v-model="username"> -->
      
