@@ -1,13 +1,17 @@
 <template>
     <input type="text" 
-    :value="modelValue"
-    @input="emit('update:modelValue',(<HTMLInputElement>$event.target).value)"
+    :value="mingzi"
+    @input="emit('update:mingzi',(<HTMLInputElement>$event.target).value)"
     >
+    <br>
+    <input type="text"
+    :value="mima"
+    @input="emit('update:mima',(<HTMLInputElement>$event.target).value)">
 </template>
 
 <script setup lang="ts" name="JojoInput">
-    defineProps(['modelValue'])
-    const emit  = defineEmits(['update:modelValue'])
+    defineProps(['mingzi','mima'])
+    const emit  = defineEmits(['update:mingzi','update:mima'])
 </script>
 
 <style scoped>
@@ -20,7 +24,7 @@
     }
 </style> 
 
-<!-- no work today just chilling -->
+<!-- no working today just chilling -->
  <!-- I might start to code the day after tmrw -->
   <!-- today sick  pause one day start from tmrw -->
    <!-- coding coding coding -->

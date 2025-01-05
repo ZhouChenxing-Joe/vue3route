@@ -2,6 +2,7 @@
   <div class="father">
     <h3>父组件</h3>
     <h4>{{ username }}</h4>
+    <h4>{{ password }}</h4>
     <!-- v-model 用在html标签上 -->
     <!-- <input type="text" v-model="username"> -->
      
@@ -9,11 +10,15 @@
      <!-- <input type="text" :value="username" @input="username = (<HTMLInputElement>$event.target).value"> -->
       
       <!-- v-model 用在组件标签上  -->
-      <JojoInput v-model="username"/>
+      <!-- <JojoInput v-model="username"/> -->
        <!-- 底层写法 -->
       <!-- <JojoInput 
       :modelValue="username" 
       @update:modelValue ="username = $event"/> -->
+
+      <!-- 修改modelValue -->
+      <JojoInput v-model:mingzi="username" v-model:mima="password"/>
+
 
       <!-- $event到底是啥？啥时候能.target
       对于原生事件，$event就是事件对象 ===> 能.target
@@ -28,6 +33,10 @@
   import JojoInput from "./JojoInput.vue";
 
   let username = ref('Joe chenxing')
+  let password = ref('woshi18bunishi52')
+
+
+  
 
 </script>
 
