@@ -38,3 +38,6 @@
   border-radius: 10px;
 }
 </style>
+
+
+<!-- 056.组件通信_v-model的细节学习 -->
