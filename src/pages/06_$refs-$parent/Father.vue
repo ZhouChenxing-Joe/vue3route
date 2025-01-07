@@ -18,9 +18,19 @@
 <script setup lang="ts" name="Father">
 import Child1 from './Child1.vue'
 import Child2 from './Child2.vue'
-import { ref } from 'vue';
+import { ref,reactive } from 'vue';
 let c1 = ref()
 let c2 = ref()
+
+//注意点:当访问boj.c 的时候，底层会自动读取value属性，因为c是在obj响应式对象中
+/* let obj = reactive({
+	a:1,
+	b:2,
+	c:ref(3)
+})
+console.log(obj.a)
+console.log(obj.b)
+console.log(obj.c) */
 
 //数据
 let house = ref('北京四合院')
