@@ -4,6 +4,7 @@
 		<h4>房产:{{ house }}</h4>
 		<button @click="changeToy">修改child1的玩具</button>
 		<button @click="changeCom">修改child2电脑</button>
+		<button @click="getAllChild($refs)">获取所有的子组件实例对象</button>
 		
 		<!-- 这里的ref是给子组件打标识的 -->
 		<Child1 ref="c1"/> 
@@ -27,6 +28,9 @@
 	}
 	function changeCom(){
 		c2.value.computer = '拯救者'
+	}
+	function getAllChild(refs:object){
+		console.log(refs)
 	}
 </script>
 
