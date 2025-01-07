@@ -1,6 +1,8 @@
 <template>
   <div class="child1">
     <h3>子组件1</h3>
+	<h4>玩具:{{ toy }}</h4>
+	<h4>书籍:{{ book }} 本</h4>
   </div>
 </template>
 
@@ -9,6 +11,9 @@ import { ref } from 'vue';
 
 //数据
 let toy = ref('奥特曼')
+let book = ref(3)
+//把数据交给外部
+defineExpose({toy,book})
 
 </script>
 
