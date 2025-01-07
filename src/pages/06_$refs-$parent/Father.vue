@@ -4,46 +4,53 @@
 		<h4>房产:{{ house }}</h4>
 		<button @click="changeToy">修改child1的玩具</button>
 		<button @click="changeCom">修改child2电脑</button>
-		<button @click="getAllChild($refs)">获取所有的子组件实例对象</button>
-		
+
+		<!-- $refs 用于父传子
+			$parent 用于子传父 -->
+		<button @click="getAllChild($refs)">让所有孩子的书变多</button>
+
 		<!-- 这里的ref是给子组件打标识的 -->
-		<Child1 ref="c1"/> 
-		<Child2 ref="c2"/>
+		<Child1 ref="c1" />
+		<Child2 ref="c2" />
 	</div>
 </template>
 
 <script setup lang="ts" name="Father">
-	import Child1 from './Child1.vue'
-	import Child2 from './Child2.vue'
-	import { ref } from 'vue';
-	let c1 = ref()
-	let c2 = ref()
+import Child1 from './Child1.vue'
+import Child2 from './Child2.vue'
+import { ref } from 'vue';
+let c1 = ref()
+let c2 = ref()
 
-	//数据
-	let house = ref('北京四合院')
+//数据
+let house = ref('北京四合院')
 
-	//方法
-	function changeToy(){
-		c1.value.toy = '变形金刚'
+//方法
+function changeToy() {
+	c1.value.toy = '变形金刚'
+}
+function changeCom() {
+	c2.value.computer = '拯救者'
+}
+function getAllChild(refs:{[key:string]:any}) {
+	for (let key in refs) {
+		refs[key].book += 3
 	}
-	function changeCom(){
-		c2.value.computer = '拯救者'
-	}
-	function getAllChild(refs:object){
-		console.log(refs)
-	}
+}
+
+//向外部提供数据
+defineExpose({house})
 </script>
 
 <style scoped>
-	.father {
-		background-color: rgb(165, 164, 164);
-		padding: 20px;
-		border-radius: 10px;
-	}
+.father {
+	background-color: rgb(165, 164, 164);
+	padding: 20px;
+	border-radius: 10px;
+}
 
-	.father button {
-		margin-bottom: 10px;
-		margin-left: 10px;
-	}
+.father button {
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
 </style>
-
