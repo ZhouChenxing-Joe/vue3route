@@ -8,11 +8,13 @@
 		<h4>x:{{ x }}</h4>
 		<h4>y:{{ y }}</h4>
 		<button @click="updateA(2)">点我更改父组件里的a</button>
+		<br>
+		<button @click="changeB(1000)">点我更改父组件里的b</button>
 	</div>
 </template>
 
 <script setup lang="ts" name="GrandChild">
-defineProps(['a','b','c','d','x','y','updateA'])
+defineProps(['a','b','c','d','x','y','updateA','changeB'])
 </script>
 
 <style scoped>
@@ -22,6 +24,9 @@ defineProps(['a','b','c','d','x','y','updateA'])
 		padding: 20px;
 		border-radius: 10px;
 		box-shadow: 0 0 10px black;
+	}
+	button{
+		margin-top: 10px;
 	}
 </style>
 
